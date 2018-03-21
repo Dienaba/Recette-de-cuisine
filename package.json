@@ -14,7 +14,6 @@
     "mongodb": "^3.0.4",
     "morgan": "~1.9.0",
     "rapidapi-connect": "0.0.6",
-    "scraper_cuisine_libre.fr": "^1.2.0",
     "serve-favicon": "~2.4.5",
     "unirest": "^0.5.1"
   }
