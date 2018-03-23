@@ -1,6 +1,14 @@
 extends layout
 
 block content
+  a(href='/users/create') Créer un compte
+  h5 Connexion 
+    form(action='/connect', method="POST")
+      p Nom d'utilisateur :
+        input(type='text', name='username')
+      p Mot de passe :
+        input(type='password', name='mdp')
+      input(type='submit')
   h1= title
   h3 #{title}, des recettes faciles et rapides pour préparer un repas à l'aide d'ingrédients sélectionner.
 
@@ -17,12 +25,24 @@ block content
     label(for="carrot")
       img(src="images/legumes/carrot.jpeg")
       input(id="carrot", type="checkbox", value="carrot", name="recherche")
+    label(for="cauliflower")
+      img(src="images/legumes/cauliflower.jpeg")
+      input(id="cauliflower", type="checkbox", value="cauliflower", name="recherche")
+    label(for="cucumber")
+      img(src="images/legumes/cucumber.jpeg")
+      input(id="cucumber", type="checkbox", value="cucumber", name="recherche")
     label(for="garlic")
       img(src="images/legumes/garlic.jpeg")
       input(id="garlic", type="checkbox", value="garlic", name="recherche")
+    label(for="leek")
+      img(src="images/legumes/leek.jpeg")
+      input(id="leek", type="checkbox", value="leek", name="recherche")
     label(for="lettuce")
       img(src="images/legumes/lettuce.jpeg")
       input(id="lettuce", type="checkbox", value="lettuce", name="recherche")
+    label(for="mushroom")
+      img(src="images/legumes/mushroom.jpeg")
+      input(id="mushroom", type="checkbox", value="mushroom", name="recherche")      
     label(for="onion")
       img(src="images/legumes/onion.jpeg")
       input(id="onion", type="checkbox", value="onion", name="recherche")
@@ -46,6 +66,9 @@ block content
     label(for="cherry")
       img(src="images/fruits/cherry.jpeg")
       input(id="cherry", type="checkbox", value="cherry", name="recherche")
+    label(for="lemon")
+      img(src="images/fruits/lemon.jpeg")
+      input(id="lemon", type="checkbox", value="lemon", name="recherche")
     label(for="orange")
       img(src="images/fruits/orange.jpeg")
       input(id="orange", type="checkbox", value="orange", name="recherche")       
@@ -175,14 +198,19 @@ block content
     
     br  
     input(type='submit', value='Valider')
+        
+    ul#sep 
+      each recipe in foodRecipes 
+        li 
+          h3 #{recipe.title} 
+        li 
+          img(src="#{recipe.image_url}")
+        li 
+          a(href='#{recipe.f2f_url}') Recette
+        li 
+          a(href='#{recipe.source_url}') Source : #{recipe.source_url}
+      
     
-  ul 
-    each val in foodRecipes
-      li
-        ul
-          each prop, name in val  
-            li #{name} : #{prop}
-            
               
 
               

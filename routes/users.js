@@ -47,7 +47,7 @@ router.post('/', async function(req, res, next) {
     });
     try {
       await user.save();
-      res.send('ok')
+      res.send('Inscription réussie')
     } catch(err) {
       next(err)
     }

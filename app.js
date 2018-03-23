@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect('mongodb://localhost/lesson4', function(err) {
+mongoose.connect('mongodb://localhost/desIdee', function(err) {
   if (err) { throw err; }
   else { console.log('Connecté à la base de données'); }
 });
