@@ -1,14 +1,15 @@
 extends layout
 
 block content
-  a(href='/users/create') Créer un compte
-  h5 Connexion 
-    form(action='/connect', method="POST")
-      p Nom d'utilisateur :
-        input(type='text', name='username')
-      p Mot de passe :
-        input(type='password', name='mdp')
-      input(type='submit')
+  div#connect
+    a(href='/users/create') Créer un compte
+    h5 Connexion 
+      form(action='/connect', method="POST")
+        p Nom d'utilisateur :
+          input(type='text', name='username')
+        p Mot de passe :
+          input(type='password', name='mdp')
+        input(type='submit')
   h1= title
   h3 #{title}, des recettes faciles et rapides pour préparer un repas à l'aide d'ingrédients sélectionner.
 
@@ -21,7 +22,7 @@ block content
     h2 Vegetables
     label(for="cabbage")
       img(src="images/legumes/cabbage.jpeg")
-      input(id="cabbage", type="checkbox", value="cabbage", name="recherche")
+    input(id="cabbage", type="checkbox", value="cabbage", name="recherche")
     label(for="carrot")
       img(src="images/legumes/carrot.jpeg")
       input(id="carrot", type="checkbox", value="carrot", name="recherche")
@@ -194,10 +195,9 @@ block content
       img(src="images/laitiers/ricotta.jpeg" )
       input(id="ricotta", type="checkbox", value="ricotta", name="recherche")
 
-
-    
     br  
     input(type='submit', value='Valider')
+    
         
     ul#sep 
       each recipe in foodRecipes 
