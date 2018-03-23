@@ -4,9 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+// var connect = require('./routes/connect')
 
 var app = express();
 
@@ -22,8 +24,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+mongoose.connect('mongodb://localhost/lesson4', function(err) {
+  if (err) { throw err; }
+  else { console.log('Connecté à la base de données'); }
+});
+
 app.use('/', index);
 app.use('/users', users);
+// app.use('/connect', connect);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

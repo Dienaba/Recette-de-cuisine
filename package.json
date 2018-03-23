@@ -6,15 +6,18 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "bcrypt": "^1.0.3",
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
     "jade": "~1.11.0",
     "mongodb": "^3.0.4",
+    "mongoose": "^5.0.11",
     "morgan": "~1.9.0",
     "rapidapi-connect": "0.0.6",
     "serve-favicon": "~2.4.5",
-    "unirest": "^0.5.1"
+    "unirest": "^0.5.1",
+    "validator": "^9.4.1"
   }
 }

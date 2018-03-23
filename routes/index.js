@@ -5,15 +5,14 @@ var request = require('request');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: "Des'Idées", recipes: { recipes: []} });
+  res.render('index', { title: "Des'Idées", foodRecipes : {recipes: []} });
 
 });
 
 router.post('/', function(req, res, next) {
-  console.log(req.body.recherche)
-  request('http://food2fork.com/api/search?key=f48cc78e3a40ae7e2cae2e919ed329f8&q=' + req.body.recherche.join(','),
+  request('http://food2fork.com/api/search?key=f48cc78e3a40ae7e2cae2e919ed329f8&q=' + req.body.recherche,
     function (error, response, body) {
-      res.render('index', { title: "Des'Idées", recipes: body });
+      res.render('index', { title: "Des'Idées", foodRecipes: JSON.parse(body).recipes });
   });
 });
 
