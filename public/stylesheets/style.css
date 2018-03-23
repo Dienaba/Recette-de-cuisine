@@ -18,4 +18,38 @@ img {
 
 a {
   text-decoration:none;
+  color: #ea4b8a;
+}
+
+
+main h1 {
+  font-size: 65px;
+  color: #ea4b8a;
+}
+main h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+form p {
+margin-left: 20px;
+}
+
+#valid {
+  margin-top: 5%;
+  margin-left: 40%;
+}
+main form {
+  margin-left: 10%;
+}
+main h2 {
+  margin: 5%;
+}
+
+header, main h1, main h3, main h2 {
+  display: flex;
+  justify-content: center;
+}
+
+#install {
+  margin-left: 25%;
 }

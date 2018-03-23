@@ -1,219 +1,225 @@
 extends layout
 
 block content
-  div#connect
-    a(href='/users/create') Créer un compte
-    h5 Connexion 
-      form(action='/connect', method="POST")
-        p Nom d'utilisateur :
-          input(type='text', name='username')
-        p Mot de passe :
-          input(type='password', name='mdp')
-        input(type='submit')
-  h1= title
-  h3 #{title}, des recettes faciles et rapides pour préparer un repas à l'aide d'ingrédients sélectionner.
+  header
+    div#connect
+      a(href='/users/create') Créer un compte
+      h5 Connexion 
+        form(action='/connect', method="POST")
+          p Nom d'utilisateur :
+            input(type='text', name='username')
+          p Mot de passe :
+            input(type='password', name='mdp')
+          input(type='submit')
+    div#install    
+      h5 Doc d'installation :
+        ul - Install :
+          li npm install request --save 
+          li npm install validator --save
+          li npm install bcrypt --save
+          li npm install mongoose --save
 
-  p Explication :
-  p Doc d'installation :
-
-  form(action='/', method='POST')
-    p Search bar : 
-      input( type="text", name="recherche")
-    h2 Vegetables
-    label(for="cabbage")
-      img(src="images/legumes/cabbage.jpeg")
-    input(id="cabbage", type="checkbox", value="cabbage", name="recherche")
-    label(for="carrot")
-      img(src="images/legumes/carrot.jpeg")
-      input(id="carrot", type="checkbox", value="carrot", name="recherche")
-    label(for="cauliflower")
-      img(src="images/legumes/cauliflower.jpeg")
-      input(id="cauliflower", type="checkbox", value="cauliflower", name="recherche")
-    label(for="cucumber")
-      img(src="images/legumes/cucumber.jpeg")
-      input(id="cucumber", type="checkbox", value="cucumber", name="recherche")
-    label(for="garlic")
-      img(src="images/legumes/garlic.jpeg")
-      input(id="garlic", type="checkbox", value="garlic", name="recherche")
-    label(for="leek")
-      img(src="images/legumes/leek.jpeg")
-      input(id="leek", type="checkbox", value="leek", name="recherche")
-    label(for="lettuce")
-      img(src="images/legumes/lettuce.jpeg")
-      input(id="lettuce", type="checkbox", value="lettuce", name="recherche")
-    label(for="mushroom")
-      img(src="images/legumes/mushroom.jpeg")
-      input(id="mushroom", type="checkbox", value="mushroom", name="recherche")      
-    label(for="onion")
-      img(src="images/legumes/onion.jpeg")
-      input(id="onion", type="checkbox", value="onion", name="recherche")
-    label(for="peas")
-      img(src="images/legumes/peas.jpeg")
-      input(id="peas", type="checkbox", value="peas", name="recherche")
-    label(for="potato")
-      img(src="images/legumes/potato.jpeg")
-      input(id="potato", type="checkbox", value="potato", name="recherche")
-    label(for="zucchini")
-      img(src="images/legumes/zucchini.jpeg")
-      input(id="zucchini", type="checkbox", value="zucchini", name="recherche")
-                    
-    h2 Fruits
-    label(for="apple")
-      img(src="images/fruits/apple.jpeg")
-      input(id="apple", type="checkbox", value="apple", name="recherche")
-    label(for="banana")
-      img(src="images/fruits/banana.jpeg")
-      input(id="banana", type="checkbox", value="banana", name="recherche")    
-    label(for="cherry")
-      img(src="images/fruits/cherry.jpeg")
-      input(id="cherry", type="checkbox", value="cherry", name="recherche")
-    label(for="lemon")
-      img(src="images/fruits/lemon.jpeg")
-      input(id="lemon", type="checkbox", value="lemon", name="recherche")
-    label(for="orange")
-      img(src="images/fruits/orange.jpeg")
-      input(id="orange", type="checkbox", value="orange", name="recherche")       
-    label(for="peach")
-      img(src="images/fruits/peach.jpeg")
-      input(id="peach", type="checkbox", value="peach", name="recherche")        
-     label(for="pear")
-      img(src="images/fruits/pear.jpeg")
-      input(id="pear", type="checkbox", value="pear", name="recherche")         
-     label(for="pepper")
-      img(src=" images/fruits/pepper.jpeg")
-      input(id="pepper", type="checkbox", value="pepper", name="recherche")        
-     label(for="strawberry")
-      img(src="images/fruits/strawberry.jpeg")
-      input(id="strawberry", type="checkbox", value="strawberry", name="recherche")         
-    label(for="tomato")
-      img(src="images/fruits/tomato.jpeg")
-      input(id="tomato", type="checkbox", value="tomato", name="recherche")
-    h2 Fish and Seafood
-    label(for="fish")
-      img(src="images/poisson/fish.jpeg")
-      input(id="fish", type="checkbox", value="fish", name="recherche")
-    label(for="langoustine")
-      img(src="images/poisson/langoustine.jpeg")
-      input(id="langoustine", type="checkbox", value="langoustine", name="recherche")
-    label(for="oilyFish")
-      img(src="images/poisson/oilyFish.jpeg")
-      input(id="oilyFish", type="checkbox", value="oily fish", name="recherche")
-    label(for="salmon")
-      img(src="images/poisson/salmon.jpeg")
-      input(id="salmon", type="checkbox", value="salmon", name="recherche")
-    label(for="shrimp")
-      img(src="images/poisson/shrimp.jpeg")
-      input(id="shrimp", type="checkbox", value="shrimp", name="recherche")
-    label(for="tuna")
-      img(src="images/poisson/tuna.jpeg")
-      input(id="tuna", type="checkbox", value="tuna", name="recherche")
-    label(for="whiteFish")
-      img(src="images/poisson/whiteFish.jpeg")
-      input(id="whiteFish", type="checkbox", value="white fish", name="recherche")
-  
-    h2 Meat
-    label(for="bacon")
-      img(src="images/viande/bacon.jpeg" )
-      input(id="bacon", type="checkbox", value="bacon", name="recherche")
-    label(for="beef")
-      img(src="images/viande/beef.jpeg" )
-      input(id="beef", type="checkbox", value="beef", name="recherche")
-    label(for="cervelat")
-      img(src="images/viande/cervelat.jpeg" )
-      input(id="cervelat", type="checkbox", value="cervelat", name="recherche")
-    label(for="chicken")
-      img(src="images/viande/chicken.jpeg" )
-      input(id="chicken", type="checkbox", value="chicken", name="recherche")
-    label(for="duck")
-      img(src="images/viande/duck.jpeg" )
-      input(id="duck", type="checkbox", value="duck", name="recherche")
-    label(for="ham")
-      img(src="images/viande/ham.jpeg" )
-      input(id="ham", type="checkbox", value="ham", name="recherche")
-    label(for="lamb")
-      img(src="images/viande/lamb.jpeg" )
-      input(id="lamb", type="checkbox", value="lamb", name="recherche")
-    label(for="mutton")
-      img(src="images/viande/mutton.jpeg" )
-      input(id="mutton", type="checkbox", value="mutton", name="recherche")
-    label(for="pork")
-      img(src="images/viande/pork.jpeg" )
-      input(id="pork", type="checkbox", value="pork", name="recherche")
-    label(for="roastBeef")
-      img(src="images/viande/roastBeef.jpeg" )
-      input(id="roastBeef", type="checkbox", value="roast Beef", name="recherche")
-    label(for="turkey")
-      img(src="images/viande/turkey.jpeg" )
-      input(id="turkey", type="checkbox", value="turkey", name="recherche")
-    label(for="egg")
-      img(src="images/viande/egg.jpeg" )
-      input(id="egg", type="checkbox", value="egg", name="recherche")
+  main 
+    h1= title
+    h3 #{title}, des recettes faciles et rapides pour préparer un repas à l'aide d'ingrédients sélectionner.
+    form(action='/', method='POST')
+      p Search bar : 
+        input( type="text", name="recherche")
+      h2 Vegetables
+      label(for="cabbage")
+        img(src="images/legumes/cabbage.jpeg")
+      input(id="cabbage", type="checkbox", value="cabbage", name="recherche")
+      label(for="carrot")
+        img(src="images/legumes/carrot.jpeg")
+        input(id="carrot", type="checkbox", value="carrot", name="recherche")
+      label(for="cauliflower")
+        img(src="images/legumes/cauliflower.jpeg")
+        input(id="cauliflower", type="checkbox", value="cauliflower", name="recherche")
+      label(for="cucumber")
+        img(src="images/legumes/cucumber.jpeg")
+        input(id="cucumber", type="checkbox", value="cucumber", name="recherche")
+      label(for="garlic")
+        img(src="images/legumes/garlic.jpeg")
+        input(id="garlic", type="checkbox", value="garlic", name="recherche")
+      label(for="leek")
+        img(src="images/legumes/leek.jpeg")
+        input(id="leek", type="checkbox", value="leek", name="recherche")
+      label(for="lettuce")
+        img(src="images/legumes/lettuce.jpeg")
+        input(id="lettuce", type="checkbox", value="lettuce", name="recherche")
+      label(for="mushroom")
+        img(src="images/legumes/mushroom.jpeg")
+        input(id="mushroom", type="checkbox", value="mushroom", name="recherche")      
+      label(for="onion")
+        img(src="images/legumes/onion.jpeg")
+        input(id="onion", type="checkbox", value="onion", name="recherche")
+      label(for="peas")
+        img(src="images/legumes/peas.jpeg")
+        input(id="peas", type="checkbox", value="peas", name="recherche")
+      label(for="potato")
+        img(src="images/legumes/potato.jpeg")
+        input(id="potato", type="checkbox", value="potato", name="recherche")
+      label(for="zucchini")
+        img(src="images/legumes/zucchini.jpeg")
+        input(id="zucchini", type="checkbox", value="zucchini", name="recherche")
+                      
+      h2 Fruits
+      label(for="apple")
+        img(src="images/fruits/apple.jpeg")
+        input(id="apple", type="checkbox", value="apple", name="recherche")
+      label(for="banana")
+        img(src="images/fruits/banana.jpeg")
+        input(id="banana", type="checkbox", value="banana", name="recherche")    
+      label(for="cherry")
+        img(src="images/fruits/cherry.jpeg")
+        input(id="cherry", type="checkbox", value="cherry", name="recherche")
+      label(for="lemon")
+        img(src="images/fruits/lemon.jpeg")
+        input(id="lemon", type="checkbox", value="lemon", name="recherche")
+      label(for="orange")
+        img(src="images/fruits/orange.jpeg")
+        input(id="orange", type="checkbox", value="orange", name="recherche")       
+      label(for="peach")
+        img(src="images/fruits/peach.jpeg")
+        input(id="peach", type="checkbox", value="peach", name="recherche")        
+       label(for="pear")
+        img(src="images/fruits/pear.jpeg")
+        input(id="pear", type="checkbox", value="pear", name="recherche")         
+       label(for="pepper")
+        img(src=" images/fruits/pepper.jpeg")
+        input(id="pepper", type="checkbox", value="pepper", name="recherche")        
+       label(for="strawberry")
+        img(src="images/fruits/strawberry.jpeg")
+        input(id="strawberry", type="checkbox", value="strawberry", name="recherche")         
+      label(for="tomato")
+        img(src="images/fruits/tomato.jpeg")
+        input(id="tomato", type="checkbox", value="tomato", name="recherche")
+      h2 Fish and Seafood
+      label(for="fish")
+        img(src="images/poisson/fish.jpeg")
+        input(id="fish", type="checkbox", value="fish", name="recherche")
+      label(for="langoustine")
+        img(src="images/poisson/langoustine.jpeg")
+        input(id="langoustine", type="checkbox", value="langoustine", name="recherche")
+      label(for="oilyFish")
+        img(src="images/poisson/oilyFish.jpeg")
+        input(id="oilyFish", type="checkbox", value="oily fish", name="recherche")
+      label(for="salmon")
+        img(src="images/poisson/salmon.jpeg")
+        input(id="salmon", type="checkbox", value="salmon", name="recherche")
+      label(for="shrimp")
+        img(src="images/poisson/shrimp.jpeg")
+        input(id="shrimp", type="checkbox", value="shrimp", name="recherche")
+      label(for="tuna")
+        img(src="images/poisson/tuna.jpeg")
+        input(id="tuna", type="checkbox", value="tuna", name="recherche")
+      label(for="whiteFish")
+        img(src="images/poisson/whiteFish.jpeg")
+        input(id="whiteFish", type="checkbox", value="white fish", name="recherche")
     
-    h2 Cereals and Starchy foods
-    label(for="corn")
-      img(src="images/epicerie/corn.jpeg" )
-      input(id="corn", type="checkbox", value="corn", name="recherche")
-    label(for="pastas")
-      img(src="images/epicerie/pastas.jpeg" )
-      input(id="pastas", type="checkbox", value="pastas", name="recherche")
-    label(for="quinoa")
-      img(src="images/epicerie/quinoa.jpeg" )
-      input(id="quinoa", type="checkbox", value="quinoa", name="recherche")
-    label(for="rice")
-      img(src="images/epicerie/rice.jpeg" )
-      input(id="rice", type="checkbox", value="rice", name="recherche")
-    label(for="wheat")
-      img(src="images/epicerie/wheat.jpeg" )
-      input(id="wheat", type="checkbox", value="wheat", name="recherche")
-  
-    h2 Dairy products
-    label(for="camembert")
-      img(src="images/laitiers/camembert.jpeg" )
-      input(id="camembert", type="checkbox", value="camembert", name="recherche")
-    label(for="cheddar")
-      img(src="images/laitiers/cheddar.jpeg" )
-      input(id="cheddar", type="checkbox", value="cheddar", name="recherche")
-    label(for="emmental")
-      img(src="images/laitiers/emmental.jpeg" )
-      input(id="emmental", type="checkbox", value="emmental", name="recherche")
-    label(for="feta")
-      img(src="images/laitiers/feta.jpeg" )
-      input(id="feta", type="checkbox", value="feta", name="recherche")
-    label(for="goatCheese")
-      img(src="images/laitiers/goatCheese.jpeg" )
-      input(id="goatCheese", type="checkbox", value="goat cheese", name="recherche")
-    label(for="gruyere")
-      img(src="images/laitiers/gruyere.jpeg" )
-      input(id="gruyere", type="checkbox", value="gruyere", name="recherche")
-    label(for="mozzarella")
-      img(src="images/laitiers/mozzarella.jpeg" )
-      input(id="mozzarella", type="checkbox", value="mozzarella", name="recherche")
-    label(for="parmesan")
-      img(src="images/laitiers/parmesan.jpeg" )
-      input(id="parmesan", type="checkbox", value="parmesan", name="recherche")
-    label(for="ricotta")
-      img(src="images/laitiers/ricotta.jpeg" )
-      input(id="ricotta", type="checkbox", value="ricotta", name="recherche")
-
-    br  
-    input(type='submit', value='Valider')
-    
-        
-    ul#sep 
-      each recipe in foodRecipes 
-        li 
-          h3 #{recipe.title} 
-        li 
-          img(src="#{recipe.image_url}")
-        li 
-          a(href='#{recipe.f2f_url}') Recette
-        li 
-          a(href='#{recipe.source_url}') Source : #{recipe.source_url}
+      h2 Meat
+      label(for="bacon")
+        img(src="images/viande/bacon.jpeg" )
+        input(id="bacon", type="checkbox", value="bacon", name="recherche")
+      label(for="beef")
+        img(src="images/viande/beef.jpeg" )
+        input(id="beef", type="checkbox", value="beef", name="recherche")
+      label(for="cervelat")
+        img(src="images/viande/cervelat.jpeg" )
+        input(id="cervelat", type="checkbox", value="cervelat", name="recherche")
+      label(for="chicken")
+        img(src="images/viande/chicken.jpeg" )
+        input(id="chicken", type="checkbox", value="chicken", name="recherche")
+      label(for="duck")
+        img(src="images/viande/duck.jpeg" )
+        input(id="duck", type="checkbox", value="duck", name="recherche")
+      label(for="ham")
+        img(src="images/viande/ham.jpeg" )
+        input(id="ham", type="checkbox", value="ham", name="recherche")
+      label(for="lamb")
+        img(src="images/viande/lamb.jpeg" )
+        input(id="lamb", type="checkbox", value="lamb", name="recherche")
+      label(for="mutton")
+        img(src="images/viande/mutton.jpeg" )
+        input(id="mutton", type="checkbox", value="mutton", name="recherche")
+      label(for="pork")
+        img(src="images/viande/pork.jpeg" )
+        input(id="pork", type="checkbox", value="pork", name="recherche")
+      label(for="roastBeef")
+        img(src="images/viande/roastBeef.jpeg" )
+        input(id="roastBeef", type="checkbox", value="roast Beef", name="recherche")
+      label(for="turkey")
+        img(src="images/viande/turkey.jpeg" )
+        input(id="turkey", type="checkbox", value="turkey", name="recherche")
+      label(for="egg")
+        img(src="images/viande/egg.jpeg" )
+        input(id="egg", type="checkbox", value="egg", name="recherche")
       
+      h2 Cereals and Starchy foods
+      label(for="corn")
+        img(src="images/epicerie/corn.jpeg" )
+        input(id="corn", type="checkbox", value="corn", name="recherche")
+      label(for="pastas")
+        img(src="images/epicerie/pastas.jpeg" )
+        input(id="pastas", type="checkbox", value="pastas", name="recherche")
+      label(for="quinoa")
+        img(src="images/epicerie/quinoa.jpeg" )
+        input(id="quinoa", type="checkbox", value="quinoa", name="recherche")
+      label(for="rice")
+        img(src="images/epicerie/rice.jpeg" )
+        input(id="rice", type="checkbox", value="rice", name="recherche")
+      label(for="wheat")
+        img(src="images/epicerie/wheat.jpeg" )
+        input(id="wheat", type="checkbox", value="wheat", name="recherche")
     
-              
+      h2 Dairy products
+      label(for="camembert")
+        img(src="images/laitiers/camembert.jpeg" )
+        input(id="camembert", type="checkbox", value="camembert", name="recherche")
+      label(for="cheddar")
+        img(src="images/laitiers/cheddar.jpeg" )
+        input(id="cheddar", type="checkbox", value="cheddar", name="recherche")
+      label(for="emmental")
+        img(src="images/laitiers/emmental.jpeg" )
+        input(id="emmental", type="checkbox", value="emmental", name="recherche")
+      label(for="feta")
+        img(src="images/laitiers/feta.jpeg" )
+        input(id="feta", type="checkbox", value="feta", name="recherche")
+      label(for="goatCheese")
+        img(src="images/laitiers/goatCheese.jpeg" )
+        input(id="goatCheese", type="checkbox", value="goat cheese", name="recherche")
+      label(for="gruyere")
+        img(src="images/laitiers/gruyere.jpeg" )
+        input(id="gruyere", type="checkbox", value="gruyere", name="recherche")
+      label(for="mozzarella")
+        img(src="images/laitiers/mozzarella.jpeg" )
+        input(id="mozzarella", type="checkbox", value="mozzarella", name="recherche")
+      label(for="parmesan")
+        img(src="images/laitiers/parmesan.jpeg" )
+        input(id="parmesan", type="checkbox", value="parmesan", name="recherche")
+      label(for="ricotta")
+        img(src="images/laitiers/ricotta.jpeg" )
+        input(id="ricotta", type="checkbox", value="ricotta", name="recherche")
 
-              
+      br  
+      input(id='valid',type='submit', value='Valider')
+      
+          
+      ul#sep 
+        each recipe in foodRecipes 
+          li 
+            h3 #{recipe.title} 
+          li 
+            img(src="#{recipe.image_url}")
+          li 
+            a(href='#{recipe.f2f_url}') Recette
+          li 
+            a(href='#{recipe.source_url}') Source : #{recipe.source_url}
+        
+      
+                
+
+                
 
               
           
